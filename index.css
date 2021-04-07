@@ -1,0 +1,284 @@
+:root,
+body {
+    height: 100%;
+}
+
+#app {
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    background: #fff;
+    z-index: 3;
+}
+
+.header .logo {
+    margin-left: 10px;
+}
+
+.header .search-input {
+    width: 142px;
+    height: 24px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 10px;
+    border-radius: 12px;
+}
+
+.header .search-input span {
+    width: 108px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header .avater svg {
+    border-radius: 50%;
+}
+
+.header .download-app {
+    width: 70px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .7);
+    background-color: #fb7299;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+/* 导航 */
+
+.nav-box {
+    height: 34px;
+    position: fixed;
+    top: 41px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.nav-box .nav-list {
+    position: absolute;
+    left: 0;
+    width: 88%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+
+/* 消除滑动条 */
+
+.nav-box .nav-list::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-box .nav {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 16px;
+    font-size: 12px;
+    color: #757575;
+}
+
+.nav-box .nav.active,
+.hide-nav-box .nav.active {
+    border-bottom: 2px solid #fb7299;
+    color: #fb7299;
+}
+
+.nav-box .down {
+    position: absolute;
+    right: 0;
+    width: 12%;
+    text-align: center;
+}
+
+.hide-nav-box {
+    position: fixed;
+    top: -120px;
+    left: 0;
+    right: 0;
+    padding-bottom: 18px;
+    z-index: 2;
+    background-color: #fff;
+    transition: top cubic-bezier(1, 0, 0, 1) .3s;
+}
+
+.hide {
+    top: 41px;
+}
+
+.hide-nav-box .nav {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    margin: 0 18px;
+}
+
+.hide-nav-box .nav.big {
+    margin: 0 12px;
+}
+
+.hide-nav-box .up {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    /* 
+    left:0;
+    right: 0;
+    text-align: center; */
+}
+
+
+/* 轮播图 */
+
+.banner-box {
+    width: 350px;
+    height: 110px;
+    position: relative;
+    top: 78px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.banner-box .banner-list {
+    position: absolute;
+    width: calc(350px * 4);
+    height: 110px;
+    transition: left .3s;
+}
+
+.banner-box .banner {
+    display: inline-block;
+}
+
+.banner-box .banner img {
+    width: 350px;
+    height: 110px;
+}
+
+.banner-box .index-list {
+    width: 46px;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, .5);
+    padding: 3px 4px;
+    border-radius: 14px;
+}
+
+.banner-box .index {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.banner-box .index.active {
+    background-color: #fb7299;
+}
+
+
+/* 视频列表 */
+
+.video-box {
+    position: relative;
+    top: 82px;
+    /* background-color: #757575; */
+}
+
+.video-box .video-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.video-box .video {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.video-box .video .poster {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 25vw;
+}
+
+.video-box .video img {
+    width: 100%;
+}
+
+.video-box .video .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 6px;
+    font-size: 12px;
+    background-image: linear-gradient(rgba(33, 33, 33, 0), rgba(33, 33, 33, .5));
+}
+
+.video-box .video .info div {
+    display: flex;
+    justify-content: center;
+    line-height: 16px;
+}
+
+.video-box .video svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+
+.video-box .title {
+    width: 100%;
+    height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 6px;
+    margin-left: 4px;
+    font-size: 13px;
+}
+
+
+/* 底部 */
+
+footer {
+    height: 60px;
+    margin: 136px 0 20px 0;
+}
+
+footer p {
+    margin-top: 3px;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+}
